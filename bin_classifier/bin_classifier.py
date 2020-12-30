@@ -285,8 +285,8 @@ class BinClassifier:
 # def run():
 #     # Test Set 1: 
 #         # f1_score: 0.672, 'logloss': 0.571
-#     from bin_classifier.datasets import load_nba_rookie_survival_5yr
-#     df=load_nba_rookie_survival_5yr()
+#     from bin_classifier.datasets import load_nba_rookie_lasts_5yr
+#     df=load_nba_rookie_lasts_5yr()
 #     X, y = df[[x for x in df.columns if x!='TARGET_5Yrs']], df['TARGET_5Yrs']
     
 #     # Test Set 2

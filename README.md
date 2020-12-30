@@ -11,8 +11,8 @@ from bin_classifier.bin_classifier import BinClassifier
 import numpy as np
 import pandas as pd
 
-from bin_classifier.datasets import load_nba_rookie_survival_5yr
-df=load_nba_rookie_survival_5yr()
+from bin_classifier.datasets import load_nba_rookie_lasts_5yr
+df=load_nba_rookie_lasts_5yr()
 X, y = df[[x for x in df.columns if x!='TARGET_5Yrs']], df['TARGET_5Yrs']
 
 clf=BinClassifier()
