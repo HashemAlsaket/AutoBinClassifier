@@ -282,29 +282,3 @@ class BinClassifier:
         return [np.average(x) for x in self.clf_cv.scores_[1]], self.d_cv
         
         
-# def run():
-#     # Test Set 1: 
-#         # f1_score: 0.672, 'logloss': 0.571
-#     from bin_classifier.datasets import load_nba_rookie_lasts_5yr
-#     df=load_nba_rookie_lasts_5yr()
-#     X, y = df[[x for x in df.columns if x!='TARGET_5Yrs']], df['TARGET_5Yrs']
-    
-#     # Test Set 2
-#         # f1_score: 0.942, logloss: 0.190
-# #     from sklearn.datasets import load_breast_cancer
-# #     import numpy as np
-# #     import pandas as pd
-# #     data = load_breast_cancer()
-# #     df = pd.DataFrame(np.c_[data['data'], data['target']], columns= np.append(data['feature_names'], ['target']))
-# #     X, y = df[[c for c in df.columns if c!='target']], df[['target']]
-    
-#     clf=BinClassifier()
-#     clf.fit(X, y)
-#     print(clf.predict(X))
-#     print(clf.predict_proba(X))
-#     print(clf.evaluate(X, y))
-#     print(clf.tune_parameters(X, y))
-#     return 1
-    
-# if __name__=="__main__":
-#     run()
