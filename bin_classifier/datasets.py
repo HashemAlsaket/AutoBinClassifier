@@ -7,4 +7,4 @@ fil = bin_classifier.__file__
 fil = fil.replace("__init__.py", "")
 
 def load_nba_rookie_survival_5yr():
-    return pd.read_csv(fil + "data/nba_rookie_survival_5yr.csv")
+    return pd.read_csv(fil + "data/nba_rookie_lasts_5yr.csv")
