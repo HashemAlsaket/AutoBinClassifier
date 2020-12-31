@@ -6,7 +6,7 @@ Automatically train a binary classifier on some set of data without any preparat
 ### Usage
 This package leverages the **scikit-learn** framework so much of mechanics will look similar.
 ```python
-from bin_classifier.bin_classifier import BinClassifier
+from bin_classifier import BinClassifier
 
 import numpy as np
 import pandas as pd
