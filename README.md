@@ -31,4 +31,11 @@ clf.evaluate(X, y)
 # {'f1_score': 0.672, 'logloss': 0.571}
 clf.tune_parameters(X, y)
 # ([0.663, 0.635, 0.645, 0.641, 0.658], {'tol': 0.02, 'fit_intercept': False, 'solver': 'sag', 'scores': {'f1_score': 0.672, 'logloss': 0.571}})
+```  
+
+### Running Tests  
+The test suite can be run with the following command:  
+
+```bash  
+python -m -v unittest tests/*
 ```
