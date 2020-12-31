@@ -6,7 +6,7 @@ Automatically train a binary classifier on some set of data without any preparat
 ### Usage
 This package leverages the **scikit-learn** framework so much of mechanics will look similar.
 ```python
-from bin_classifier.bin_classifier import BinClassifier
+from bin_classifier.lr_bin_classifier import LrBinClassifier
 
 import numpy as np
 import pandas as pd
@@ -15,7 +15,7 @@ from bin_classifier.datasets import load_nba_rookie_lasts_5yr
 df=load_nba_rookie_lasts_5yr()
 X, y = df[[x for x in df.columns if x!='TARGET_5Yrs']], df['TARGET_5Yrs']
 
-clf=BinClassifier()
+clf=LrBinClassifier()
 clf.fit(X, y)
 clf.predict(X)
 # [0 1 1 ... 0 1 0]
