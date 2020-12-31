@@ -170,6 +170,7 @@ class LrBinClassifier(BinClassifier):
 
         # Scale data
         data = self.scale_data(data)
+        return data
 
     def fit(self, X, y, max_categories=None):
         """Fit a logistic regression model
@@ -182,7 +183,7 @@ class LrBinClassifier(BinClassifier):
         """
         if not self.clf:
             clf = LogisticRegression()
-            self.validate_data(X, max_categories=max_categories)
+            X = self.validate_data(X, max_categories=max_categories)
             X_train, X_test, y_train, y_test = train_test_split(
                 X, y, test_size=0.33, random_state=42
             )
@@ -206,7 +207,7 @@ class LrBinClassifier(BinClassifier):
         :rtype: Vector.
         """
         if not self.preds:
-            self.validate_data(X, self.max_categories)
+            X = self.validate_data(X, self.max_categories)
             X_train, X_test = train_test_split(X, test_size=0.33, random_state=42)
             diff = set(X_test.columns) - set(self.req_fts)
             if diff:
@@ -229,7 +230,7 @@ class LrBinClassifier(BinClassifier):
         :rtype: Vector.
         """
         if not self.proba:
-            self.validate_data(X, self.max_categories)
+            X = self.validate_data(X, self.max_categories)
             X_train, X_test = train_test_split(X, test_size=0.33, random_state=42)
             diff = set(X_test.columns) - set(self.req_fts)
             if diff:
@@ -272,7 +273,7 @@ class LrBinClassifier(BinClassifier):
         :rtype: Hash table.
         """
         if not self.clf_cv:
-            self.validate_data(X, self.max_categories)
+            X = self.validate_data(X, self.max_categories)
             X_train, X_test, y_train, y_test = train_test_split(
                 X, y, test_size=0.33, random_state=42
             )
